@@ -1,0 +1,24 @@
+<div class='page-wrapper' id='main-wrapper' data-layout='vertical' data-navbarbg='skin6' data-sidebartype='full'
+   data-sidebar-position='fixed' data-header-position='fixed'>
+<div class="body-wrapper">
+   <div class="container-fluid">
+      <div class="card">
+         <div class="card-body">
+            <h5 class="card-title mb-4">Edit Brand</h5>
+            <form action="/brand/edit/{{ brand._id }}" method="post">
+               <div class="mb-3">
+                  <label for="brandName" class="form-label">Brand Name:</label>
+                  <input type="text" class="form-control" name="name" id="brandName" value="{{ brand.name }}" required>
+               </div>
+               <div class="mb-3">
+                  <label for="brandCountry" class="form-label">Brand Country:</label>
+                  <input type="text" class="form-control" name="country" id="brandCountry" value="{{ brand.country }}" required>
+               </div>
+               <button type="submit" class="btn btn-primary">Edit Brand</button>
+            </form>
+         </div>
+      </div>
+   </div>
+</div>
+
+</div>
