@@ -57,20 +57,28 @@ router.post("/edit/:id", async (req, res) => {
 
 router.get("/sort/asc", async (req, res) => {
   var products = await ProductModel.find()
+  .populate("brand").populate("category")
     .sort({ name: 1 });
   res.render("admin/product/index", { products, layout: "layoutAdmin" });
 });
 
 router.get("/sort/desc", async (req, res) => {
   var products = await ProductModel.find()
+  .populate("brand").populate("category")
     .sort({ name: -1});
   res.render("admin/product/index", { products, layout: "layoutAdmin"});
 });
 
 router.post("/search", async (req, res) => {
   var keyword = req.body.keyword;
-  var products = await ProductModel.find({name: new RegExp(keyword, "i"),})
-  res.render("admin/product/index", { products, layout: "layoutAdmin" });
+  try {
+    var products = await ProductModel.find({ name: new RegExp(keyword, "i") }).populate("brand").populate("category");
+    res.render("admin/product/index", { products, layout: "layoutAdmin" });
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Something went wrong");
+  }
 });
+
 
 module.exports = router;
