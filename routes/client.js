@@ -17,6 +17,13 @@ router.get('/menu', async(req, res, next)=> {
   res.render('client/menu', {products, categories});
 });
 
+router.post("/search", async (req, res) => {
+  var keyword = req.body.keyword;
+  var products = await ProductModel.find({name: new RegExp(keyword, "i"),})
+  res.render("client/menu", {products});
+});
+
+
 router.get('/about', function(req, res, next) {
   res.render('client/about');
 });
@@ -24,6 +31,7 @@ router.get('/about', function(req, res, next) {
 router.get('/book', function(req, res, next) {
   res.render('client/book');
 });
+
 
 
 
