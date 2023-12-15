@@ -10,7 +10,7 @@ var BrandSchema = mongoose.Schema(
       country: {
          type: String,
          required: [true, 'Country is required'],
-         minlength: [3, 'Country name must be at least 3 characters'],
+         minlength: [2, 'Country name must be at least 3 characters'],
          maxlength: [30, 'Country name cannot exceed 30 characters'],
        },
    });

@@ -14,10 +14,11 @@
           <label for='productImage'>Image:</label>
           <input type='url' class='form-control' name='image' id='productImage' value='{{product.image}}' required />
         </div>
-        <div class='form-group'>
-          <label for='productDetail'>Product detail:</label>
-          <input type='text' class='form-control' name='detail' id='productDetail' value='{{product.detail}}' required />
-        </div>
+<div class='form-group'>
+  <label for='productDetail'>Product detail:</label>
+  <textarea class='form-control' name='detail' id='productDetail' cols="10" rows="5" required>{{product.detail}}</textarea>
+</div>
+
         <div class='form-group'>
           <label for='productPrice'>Price:</label>
           <input type='text' class='form-control' name='price' id='productPrice' value='{{product.price}}' required />
