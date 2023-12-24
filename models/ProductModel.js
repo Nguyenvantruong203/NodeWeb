@@ -8,12 +8,10 @@ const ProductSchema = mongoose.Schema({
     maxlength: [100, 'Product name cannot exceed 20 characters'],
   },
   image: String,
-  detail: {
-    type: String,
-    required: [true, 'Product detail is required'],
-    minlength: [10, 'Product detail must be at least 10 characters'],
-  },
+  detail: String,
   price: String,
+  material: String,
+  date : String,
   category: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'categories',

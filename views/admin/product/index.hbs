@@ -4,7 +4,7 @@
     <div class='container-fluid'>
       <div class='card'>
         <div class='card-body'>
-          <a class='btn btn-info' href='/product/add'>Add new mobile</a>
+          <a class='btn btn-info' href='/product/add'>Add new Toy</a>
           <a class='btn btn-primary' href='/product/sort/asc'>Sort ASC</a>
           <a class='btn btn-secondary' href='/product/sort/desc'>Sort DESC</a>
 
@@ -26,6 +26,8 @@
               <th>Image</th>
               <th>Price</th>
               <th>Product detail</th>
+              <th>material</th>
+              <th>date</th>
               <th>Category</th>
               <th>Brand</th>
               <th colspan='2'>Menu</th>
@@ -38,6 +40,8 @@
               </td>
               <td>{{price}}</td>
               <td>{{detail}}</td>
+              <td>{{material}}</td>
+              <td>{{date}}</td>
               <td>{{brand.name}}</td>
               <td>{{category.name}}</td>
               <td>

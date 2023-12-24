@@ -1,47 +1,59 @@
 <div class='page-wrapper' id='main-wrapper' data-layout='vertical' data-navbarbg='skin6' data-sidebartype='full'
   data-sidebar-position='fixed' data-header-position='fixed'>
-<div class="body-wrapper">
-  <div class='container-fluid'>
-    <div class='card'>
-      <div class='card-body'>
-        <form action='/product/add' method='post'>
-          <h1>Add new Product</h1>
-          <div class='form-group'>
-            <label for='productName'>Product name:</label>
-            <input type='text' class='form-control' name='name' id='productName' required />
-          </div>
-          <div class='form-group'>
-            <label for='productImage'>Image:</label>
-            <input type='url' class='form-control' name='image' id='productImage' required />
-          </div>
-          <div class='form-group'>
-            <label for='productDetail'>Product detail:</label>
-            <textarea class='form-control' name='detail' id='productDetail' cols="10" rows="5" required></textarea>
-          </div>
-          <div class='form-group'>
-            <label for='productPrice'>Price:</label>
-            <input type='text' class='form-control' name='price' id='productPrice' required />
-          </div>
-          <div class='form-group'>
-            <label for='productBrand'>Product brand:</label>
-            <select class='form-control' name='brand' id='productBrand'>
-              {{#each brands}}
-              <option value='{{_id}}'>{{name}}</option>
-              {{/each}}
-            </select>
-          </div>
-          <div class='form-group'>
-            <label for='productCategory'>Product category:</label>
-            <select class='form-control' name='category' id='productCategory'>
-              {{#each categories}}
-              <option value='{{_id}}'>{{name}}</option>
-              {{/each}}
-            </select>
-          </div>
-          <button type='submit' class='btn btn-primary'>Add</button>
-        </form>
+  <div class="body-wrapper">
+    <div class='container-fluid'>
+      <div class='card'>
+        <div class='card-body'>
+          <form action='/product/add' method='post'>
+            <h1>Add new Product</h1>
+            <div class='form-group'>
+              <label for='productName'>Product name:</label>
+              <input type='text' class='form-control' name='name' id='productName' required />
+            </div>
+            <div class='form-group'>
+              <label for='productImage'>Image:</label>
+              <input type='url' class='form-control' name='image' id='productImage' required />
+            </div>
+            <div class='form-group'>
+              <label for='productDetail'>Product detail:</label>
+              <textarea class='form-control' name='detail' id='productDetail' cols="10" rows="5" required></textarea>
+            </div>
+            <div class='form-group'>
+              <label for='productPrice'>Price:</label>
+              <input type='text' class='form-control' name='price' id='productPrice' required />
+            </div>
+
+            <div class='form-group'>
+              <label for='productPrice'>Date:</label>
+              <input type="date" name="date" id="" required>
+            </div>
+
+            <div class='form-group'>
+              <label for='productPrice'>Material:</label>
+              <input type="radio" name="material" value="plastic"> plastic
+              <input type="radio" name="material" value="silver"> silver
+              <br><br>
+            </div>
+            <div class='form-group'>
+              <label for='productBrand'>Product brand:</label>
+              <select class='form-control' name='brand' id='productBrand'>
+                {{#each brands}}
+                <option value='{{_id}}'>{{name}}</option>
+                {{/each}}
+              </select>
+            </div>
+            <div class='form-group'>
+              <label for='productCategory'>Product category:</label>
+              <select class='form-control' name='category' id='productCategory'>
+                {{#each categories}}
+                <option value='{{_id}}'>{{name}}</option>
+                {{/each}}
+              </select>
+            </div>
+            <button type='submit' class='btn btn-primary'>Add</button>
+          </form>
+        </div>
       </div>
     </div>
   </div>
-</div>
 </div>
